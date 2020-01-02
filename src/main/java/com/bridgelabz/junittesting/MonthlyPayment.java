@@ -13,14 +13,16 @@ public class MonthlyPayment {
 		double Y=scn.nextDouble();
 		System.out.println("Enter the number of R: ");
 		double R=scn.nextDouble();
-		monthlypayment(P,Y,R);
+		monthlyPayment(P,Y,R);   //Calling Static Parameterized Method in main Method.
 		scn.close();
 	}
-	public static void monthlypayment(double P,double Y,double R) {
-		double n=12*Y;
+	public static void monthlyPayment(double P,double Y,double R) {
+		double n=12*Y;       //Using Formula to Find n value.
 		System.out.println("n is: "+n);
-		double r=R/(1200);
+		double r=R/(1200);  //Using Formula to Find r value.
 		System.out.println("r is: "+r);
+//Using Formula to Find Payment.
+//Math.pow(a,b) Method is used to find a power b value. 		
 		double Payment=P*r/(1-Math.pow(1+r,-n));
 		System.out.println("Payment is: "+Payment);
 	}

@@ -9,18 +9,20 @@ public class PowerOfTwo {
 		Scanner scn=new Scanner(System.in);
 		System.out.println("Enter the number: ");
 		int number=scn.nextInt();
-		poweroftwo(number);
+		//Calling Static Parameterized Method in main Method.
+		System.out.println(powerOfTwo(number));
 		scn.close();
 	}
-	public static void poweroftwo(int number)
+	public static int powerOfTwo(int number)
 	{
-		int i=0;
-		int	power=1;
+		int i=1; //Initialized i=0;
+		int	power=1;  //Initialized Power=1;
 		while(i<=number)
 		{
-			System.out.println("2^"+i+" is:"+power);
-			power=2*power;
-			i++;
+		  //Display the Power UpTo Condition is Satisfying.
+			power=2*power;  //To Find Power Multiply Power by TWO.
+			i++;   //Incrementing the value of i.
 		}
+		return power;
 	}
 }

@@ -11,15 +11,16 @@ public class WindChill {
 		double t=scn.nextDouble();
 		System.out.println("Enter the value of v: ");
 		double v=scn.nextDouble();
-		windchill(t,v);
+		System.out.println(windChill(t,v));   //Calling Static Parameterized Method in main Method.
 		scn.close();
 	}
-	public static void windchill(double t,double v) {
-		if(t>50||v>120||v<3)
-			System.out.println("The Formula is NOT Valid");
+	public static double windChill(double t,double v) {
+		if(t>50||v>120||v<3)  //Satisfying the given Condition.
+			return -1;
 		else {
+//Finding the value of  wc using the Formulae.			
 		double wc=35.74+(0.6215*t)+((0.4275*t)-35.75)*Math.pow(v, 0.16);
-		System.out.println(wc);
+		return wc;
 	}
 	}
 }

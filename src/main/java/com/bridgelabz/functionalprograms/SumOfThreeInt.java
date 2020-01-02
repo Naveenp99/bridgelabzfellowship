@@ -14,24 +14,25 @@ public class SumOfThreeInt {
 		for(int m=0;m<N;m++) {
 		a[m]=scn.nextInt();
 		}
-		sumofthree(a);
+//Calling Static Parameterized Method in main Method.		
+		System.out.println(sumOfThreeInt(a));    
 		scn.close();
 	}
-	public static void sumofthree(int[] a) {
-		int flag=1;
+	public static String sumOfThreeInt(int[] a) {
+		int flag=1;    //Creating flag Integer for Our Reference.
 		for(int i=0;i<a.length;i++) {
 			for(int j=i+1;j<a.length;j++) {
 				for(int k=j+1;k<a.length;k++) {
-					if(a[i]+a[j]+a[k]==0)
+//Putting the Condition Sum Of Three Integer is Equal to Zero.
+					if(a[i]+a[j]+a[k]==0)         
 					{
 						flag=0;
-						System.out.println("triplets are FOUND");
-						System.out.println("triplets are: "+a[i]+" "+a[j]+" "+a[k]);
+//Displaying the Three Integers if Integers are Found.					
+						return "triplets are FOUND"; 
 					}
 				}
 			}
 		}
-		if(flag==1)
-			System.out.println("triplets are NOT FOUND");
+		return "triplets are NOT FOUND";
 	}
 }

@@ -11,21 +11,22 @@ public class PrimeNumberRange {
 		int a=scn.nextInt();
 		System.out.println("Enter the number of b: ");
 		int b=scn.nextInt();
-		primerange(a,b);
+		//Calling Static Parameterized Methods in main Method.
+		primeNumberRange(a,b);
 		scn.close();
 	}
-	public static void primerange(int a,int b) {
+	public static void primeNumberRange(int a,int b) {
 		for(int i=a;i<=b;i++) {
-			if(i==1) continue;
-			int flag=0;
+			if(i==1 || i==0) continue;    //0 and 1 is NOT a Prime Numbers.
+			int flag=0;//Creating Flag for Our reference.
 			for(int j=2;j<=i/2;j++) {
-				if(i%j==0) {
-					flag=1;
-					break;
+				if(i%j==0) {     //Checking i is Divisible by j. 
+					flag=1;      //If it is Divide then it is Not a Prime Number.
+					break;         // And Flag become 1.
 				}
 			}
-			if(flag==0) {
-				System.out.print(i+" ");
+			if(flag==0) {           //If it is NOT Divide then it is a Prime Number.
+				System.out.print(i+" ");     //Display the Final Output.
 			}
 		}
 	}
