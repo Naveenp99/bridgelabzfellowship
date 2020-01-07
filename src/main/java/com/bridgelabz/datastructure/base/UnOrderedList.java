@@ -7,13 +7,14 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class UnOrderedList<T> {
+	// Creating the Node.
 	public class Node<T>{
 		
 		T data;
 		Node<T> next;
+		// Creating the Constructor for Node.
 		public Node(T data) {
 			this.data=data;
-			this.next=next;
 	}
 		public T getData() {
 			return data;
@@ -27,12 +28,13 @@ public class UnOrderedList<T> {
 	}
 	private Node<T> head;
 	private Node<T> last;
-	private Node<T> tail;
 	private int size;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		 // Take the Input from the file.
+		//Put appropriate path location in FileReader.
 		try{
 			FileReader fr=new FileReader("/home/user/eclipse-workspacefinal/bridgelabz/src/main/java/com/bridgelabz/datastructure/base/string.txt");
 			BufferedReader br=new BufferedReader(fr);
@@ -55,18 +57,22 @@ public class UnOrderedList<T> {
 			while(bool)
 			{
 				System.out.print("\nEnter your choice : ");
+				//Converting from String to Integer.
 				int n=Integer.parseInt(b.readLine());
 				switch(n)
 				{
 					case 1:
 						System.out.print("\nEnter the search name : ");
 						String search=b.readLine();
+						//if Searched data is present then remove from the list.
 						if(list.search(search)==true)
 						list.Remove(search);
+						//if Searched data is NOT present then add to the list.
 						else if(list.search(search)==false)
 							list.add(search);
 						break;
 					case 2:
+						// Displaying the Result.
 						list.display();;
 						break;
 					case 3:
@@ -81,6 +87,7 @@ public class UnOrderedList<T> {
 		}catch(Exception e){System.out.println(e);}	
 		
 	}
+	//This Method is used to Search the Data is Found or Not.
 	public boolean search(T data)
 	{
 		Node<T> temp = head;
@@ -92,6 +99,7 @@ public class UnOrderedList<T> {
 		}
 		return false;
 	}
+	//Used to Display the result.
 	public void display() {
 		if(head==null || last==null) {
 			System.out.println("List is Empty");
@@ -103,7 +111,7 @@ public class UnOrderedList<T> {
 			temp=temp.getNext();
 		}
 	}
-	
+	// It will ADD the given Data to the List.
 	public void add(T data)
 	{
 		Node<T> node=new Node<T>(data);
@@ -117,7 +125,7 @@ public class UnOrderedList<T> {
 			last.next=node;
 		}
 	}
-	
+	// Used to REMOVE the data from the list.
 	public boolean Remove(T data)
 	{
 		Node<T> temp =  head;
@@ -143,7 +151,7 @@ public class UnOrderedList<T> {
 		return true;
 		
 	}
-	
+	// Used to add data into the given FILE.
 	public void addIntoFile(String key)
 	{
 		Node<T> current=head;

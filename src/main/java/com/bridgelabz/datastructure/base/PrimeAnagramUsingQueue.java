@@ -12,8 +12,10 @@ public class PrimeAnagramUsingQueue {
 		   int c=scn.nextInt();
 		   System.out.println("Enter the number of d: ");
 		   int d=scn.nextInt();
-		   primeRange(c,d);
+		   primeRange(c,d);   //calling static method.
 	}
+	//To check the number is Prime or Not.
+		//If it Prime return 1 else return 0.
 	public static int primeNumber(int num) {
 		   if(num<=1)  return 0;
 				for(int k=2;k<=num/2;k++) {
@@ -23,9 +25,10 @@ public class PrimeAnagramUsingQueue {
 				}
 					return 1;	
 			}
+	// Find the Prime Range for the given Input.
 			public static void primeRange(int a,int b) {
-				Queue<Integer> queue=new Queue<Integer>();
-				int[][] arr1=new int[a+1][b+1];
+				Queue<Integer> queue=new Queue<Integer>();  //creating queue object to store the result.
+				int[][] arr1=new int[a+1][b+1];   //Creating TwoDArray to store elements.
 				System.out.println("prime anagrams are: ");
 				for(int i=a;i<=b;i++) {
 					if(i==1||i==0||i<9) continue;
@@ -37,16 +40,16 @@ public class PrimeAnagramUsingQueue {
 						}
 					}
 					if(flag==0) {
-						if(anagram(i)==1) {
-							arr1[a][b]=i;	
-			queue.addFront((arr1[a][b]));
+						if(anagram(i)==1) {    //calling anagram() method to reverse the number
+							arr1[a][b]=i;      //Storing result in an Array.	
+			queue.addFront((arr1[a][b]));  //Storing final result in an QUEUE.	
 			
 						}
 						}
 						}
 				queue.display();
 				}
-			
+			//Reverse the prime number.
 			public static int reverse(int num) {
 				int rev=0;  //Initialized Reverse=0.
 				while(num>0) {
@@ -56,6 +59,7 @@ public class PrimeAnagramUsingQueue {
 				}
 				return rev;   //return the reverse number. 
 			}
+			//Reverse the prime number and pass that number to check it is prime or not.
 			public static int anagram(int number) {
 				int rev=0;
 				while(number>0) {

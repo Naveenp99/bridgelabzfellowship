@@ -10,12 +10,16 @@ public class PrimeAnagramUsingStack<T> {
 		   int c=scn.nextInt();
 		   System.out.println("Enter the number of d: ");
 		   int d=scn.nextInt();
-				Stack<Integer> stack=new Stack<Integer>();
 				int a=c;
 				int b=d;
-				int[][] arr1=new int[a+1][b+1];
 				System.out.println("prime anagrams are: ");
-				for(int i=a;i<=b;i++) {
+				primeRange(a,b);
+	}
+				// Find the Prime Range for the given Input.
+	public static void primeRange(int a,int b) {
+		Stack<Integer> stack=new Stack<Integer>();  //creating stack object to store the result
+		int[][] arr1=new int[a+1][b+1];   //Creating TwoDArray to store elements.	
+		for(int i=a;i<=b;i++) {
 					if(i==1||i==0||i<9) continue;
 					int flag=0;
 					for(int j=2;j<=i/2;j++) {
@@ -25,15 +29,17 @@ public class PrimeAnagramUsingStack<T> {
 						}
 					}
 					if(flag==0) {
-						if(anagram(i)==1) {
-							arr1[a][b]=reverse(i);	
+						if(anagram(i)==1) {    //calling anagram() method to reverse the number
+							arr1[a][b]=reverse(i);	   //Storing result in an Array.
 							stack.push(arr1[a][b]);
 						}
 						}
 				}
 					stack.display();
 				}
-		   
+
+	//To check the number is Prime or Not.
+		//If it Prime return 1 else return 0.
 	public static int primeNumber(int num) {
 		   if(num<=1)  return 0;
 				for(int k=2;k<=num/2;k++) {

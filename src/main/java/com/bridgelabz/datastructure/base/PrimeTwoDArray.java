@@ -9,14 +9,15 @@ public class PrimeTwoDArray {
 	   int d=scn.nextInt();
 	   while(c<=900 && d<=1000) {
 		   System.out.print("arr["+c+"]"+"["+d+"]"+" is:");
-		 primerange(c,d);
+		 primerange(c,d);  // calling static method.
 	   System.out.println();
 	   c=d;;
 	   d+=100;
    }
    }
+// Find the Prime Range for the given Input.
    public static void primerange(int a,int b) {
-	   int[][] arr=new int[a+1][b+1]; 
+	   int[][] arr=new int[a+1][b+1];   //Creating TwoDArray to store elements.
 		for(int i=a;i<=b;i++) {
 			if(i==0||i==1) continue;
 			int flag=0;
@@ -27,7 +28,7 @@ public class PrimeTwoDArray {
 				}
 			}
 			if(flag==0) {
-				arr[a][b]=i;
+				arr[a][b]=i;  //storing in array object.
 				System.out.print(arr[a][b]+" ");
 			}
 		}

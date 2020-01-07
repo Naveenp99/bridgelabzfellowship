@@ -6,20 +6,22 @@ public class OrderedList<T extends Comparable<T>> {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+  // Take the Input from the file.
+		//Put appropriate path location in FileReader.
 		try{
 			FileReader fr=new FileReader("/home/user/eclipse-workspacefinal/bridgelabz/src/main/java/com/bridgelabz/datastructure/base/number.txt");
 			BufferedReader br=new BufferedReader(fr);
 			BufferedReader b=new BufferedReader(new InputStreamReader(System.in));
-			OrderedList<Integer> list=new OrderedList<Integer>();
+			OrderedList<Integer> list=new OrderedList<Integer>();  //Creating OrderedList Integer Object. 
 			String s="";
 			while((s=br.readLine())!=null)
 			{
 				StringTokenizer st=new StringTokenizer(s," ");
 				while(st.hasMoreTokens())
 				{
+					//Converting from String to Integer.
 					int number=Integer.parseInt(st.nextToken());
-					 list.add(number);	
+					 list.add(number);	   //Adding numbers to list.
 				}
 			}
 			br.close();
@@ -35,19 +37,23 @@ public class OrderedList<T extends Comparable<T>> {
 					case 1:
 						System.out.print("Enter the number : ");
 						int search=Integer.parseInt(b.readLine());
+				//if Searched data is present then remove from the list.		
 					if(list.search(search)==true) {
 						list.Remove(search);
 					}
+					//if Searched data is NOT present then add to the list.
 						else if(list.search(search)==false){
 						list.add(search);
 					}
 						break;
+				// if new data came then add it according to the Sorted Order.		
 					case 2:
 						System.out.print("Enter the number : ");
 						int data1=Integer.parseInt(b.readLine());
 						System.out.print("Sorted List : ");
 						list.add(data1);
 						break;
+						// Display the Result.
 					case 3:
 						System.out.println("Data : ");
 						list.display();
@@ -103,7 +109,7 @@ public class OrderedList<T extends Comparable<T>> {
 		}
 		return "["+s+"]";
 	}
-	
+	// To display the Result.
 	public void display() {
 		if(head==null || last==null) {
 			System.out.println("List is Empty");

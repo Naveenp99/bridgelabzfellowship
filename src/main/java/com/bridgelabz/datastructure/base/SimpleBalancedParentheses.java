@@ -5,16 +5,17 @@ public class SimpleBalancedParentheses<T> {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 char[] ch= {'(','{','[','{','(','[',']',')','}',']','}',')'};
-System.out.println(checkMaching(ch));
+System.out.println(checkMaching(ch));  //calling static boolen method.
 	}
 	
-	
+	// if they match it will print true else false.
 	public static boolean areMaching(char char1,char char2) {
 		if(char1=='(' && char2==')')  return true;
 		if(char1=='{' && char2=='}')  return true;
 		if(char1=='[' && char2==']')  return true;
 		else  return false;
 	}
+	// check if they match it will print true else false.
 	public static boolean checkMaching(char[] ch) {
 		Stack<Character> stack=new Stack<Character>();
 		for(int i=0;i<ch.length;i++) {
@@ -25,6 +26,7 @@ System.out.println(checkMaching(ch));
 				else if(!areMaching(stack.popFirst(),ch[i]))  return false;
 			}
 		}
+	//	if stack is empty then it will print true else false.
 		if(stack.isEmpty())  return true;
 		else 
 			return false;
