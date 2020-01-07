@@ -1,8 +1,10 @@
 package com.bridgelabz.datastructure.base;
-import java.util.Scanner;
-import com.bridgelabz.utility.Stack;
 
-public class PrimeAnagramUsingStack<T> {
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Queue;
+
+public class PrimeAnagramUsingQueue {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 Scanner scn=new Scanner(System.in);
@@ -10,9 +12,19 @@ public class PrimeAnagramUsingStack<T> {
 		   int c=scn.nextInt();
 		   System.out.println("Enter the number of d: ");
 		   int d=scn.nextInt();
-				Stack<Integer> stack=new Stack<Integer>();
-				int a=c;
-				int b=d;
+		   primeRange(c,d);
+	}
+	public static int primeNumber(int num) {
+		   if(num<=1)  return 0;
+				for(int k=2;k<=num/2;k++) {
+					if(num%k==0) {
+						return 0;
+					}
+				}
+					return 1;	
+			}
+			public static void primeRange(int a,int b) {
+				Queue<Integer> queue=new Queue<Integer>();
 				int[][] arr1=new int[a+1][b+1];
 				System.out.println("prime anagrams are: ");
 				for(int i=a;i<=b;i++) {
@@ -26,23 +38,14 @@ public class PrimeAnagramUsingStack<T> {
 					}
 					if(flag==0) {
 						if(anagram(i)==1) {
-							arr1[a][b]=reverse(i);	
-							stack.push(arr1[a][b]);
+							arr1[a][b]=i;	
+			queue.addFront((arr1[a][b]));
+			
 						}
 						}
+						}
+				queue.display();
 				}
-					stack.display();
-				}
-		   
-	public static int primeNumber(int num) {
-		   if(num<=1)  return 0;
-				for(int k=2;k<=num/2;k++) {
-					if(num%k==0) {
-						return 0;
-					}
-				}
-					return 1;	
-			}
 			
 			public static int reverse(int num) {
 				int rev=0;  //Initialized Reverse=0.

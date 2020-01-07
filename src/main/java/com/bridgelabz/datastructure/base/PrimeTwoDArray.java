@@ -1,6 +1,6 @@
 package com.bridgelabz.datastructure.base;
 import java.util.*;
-public class SplitPrimeNumAndStoreInTwoDArray {
+public class PrimeTwoDArray {
    public static void main(String[] args) {
 	   Scanner scn=new Scanner(System.in);
 	   System.out.println("Enter the number of c: ");
