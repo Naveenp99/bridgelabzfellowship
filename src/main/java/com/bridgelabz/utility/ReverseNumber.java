@@ -1,8 +1,6 @@
 package com.bridgelabz.utility;
 
-import java.util.Scanner;
-
-public class ReverseOfNumber {
+public class ReverseNumber {
 	public static int reverse(int number) {
 		int rev=0;  //Initialized Reverse=0.
 		while(number>0) {
@@ -12,10 +10,10 @@ public class ReverseOfNumber {
 		}
 		return rev;   //return the reverse number. 
 	}
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Scanner scn=new Scanner(System.in);
 		System.out.println("Enter the number: ");
 		int number=scn.nextInt();
 		System.out.println(reverse(number));
-	}
+	}*/
 }

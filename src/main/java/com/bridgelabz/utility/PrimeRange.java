@@ -1,9 +1,7 @@
 package com.bridgelabz.utility;
 
-import java.util.Scanner;
-
-public class PrimeNumberRange {
-	public static void main(String[] args) {
+public class PrimeRange {
+	/*public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scn=new Scanner(System.in);
 		System.out.println("Enter the number of a: ");
@@ -13,8 +11,8 @@ public class PrimeNumberRange {
 		//Calling Static Parameterized Methods in main Method.
 		primeNumberRange(a,b);
 		scn.close();
-	}
-	public static void primeNumberRange(int a,int b) {
+	}*/
+	public static void primeRange(int a,int b) {
 		for(int i=a;i<=b;i++) {
 			if(i==1 || i==0) continue;    //0 and 1 is NOT a Prime Numbers.
 			int flag=0;//Creating Flag for Our reference.
